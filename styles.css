@@ -3,6 +3,7 @@ html {
     scroll-behavior: smooth;
     margin: 0 !important;
     padding: 0 !important;
+    font-size: 16px;
 }
 
 /* ===== RESET Y CONFIGURACIÓN GENERAL ===== */
@@ -17,6 +18,7 @@ html, body {
     padding: 0 !important;
     width: 100%;
     height: 100%;
+    overflow-x: hidden;
 }
 
 body {
@@ -28,6 +30,9 @@ body {
     background-position: center;
     background-attachment: fixed;
     background-color: #f5e6d3;
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
 }
 
 button {
@@ -65,11 +70,12 @@ button {
     z-index: 1;
     text-align: center;
     padding: 20px;
+    max-width: 100%;
 }
 
 .nombres-novios-cursiva {
     font-family: 'Parisienne', cursive;
-    font-size: 5rem;
+    font-size: clamp(2.5rem, 8vw, 5rem);
     font-weight: 400;
     color: white;
     text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.9), 0 0 25px rgba(0, 0, 0, 0.6);
@@ -100,7 +106,7 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 80px 20px;
+    padding: 60px 20px;
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 1.5s ease-out, transform 1.5s ease-out;
@@ -119,7 +125,7 @@ button {
 .caja-frase {
     background: rgba(230, 239, 228, 0.90);
     backdrop-filter: blur(5px);
-    padding: 60px 50px;
+    padding: clamp(30px, 5vw, 60px) clamp(25px, 4vw, 50px);
     border-radius: 24px;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
     border: 2px solid rgba(255, 255, 255, 0.5);
@@ -139,8 +145,8 @@ button {
 }
 
 .icono-corazon {
-    font-size: 4rem;
-    margin-bottom: 30px;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    margin-bottom: clamp(15px, 3vw, 30px);
     animation: latirCorazon 1.5s ease-in-out infinite;
 }
 
@@ -154,9 +160,9 @@ button {
 }
 
 .texto-frase {
-    font-size: 1.8rem;
+    font-size: clamp(1.1rem, 3vw, 1.8rem);
     color: #5F7A63;
-    line-height: 1.8;
+    line-height: 1.7;
     font-style: italic;
     letter-spacing: 1px;
 }
@@ -199,13 +205,14 @@ button {
     text-align: center;
     color: white;
     max-width: 1000px;
+    width: 100%;
 }
 
 /* Texto "FALTAN" */
 .faltan-texto {
-    font-size: 2.5rem;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
     font-weight: 300;
-    letter-spacing: 8px;
+    letter-spacing: clamp(3px, 1vw, 8px);
     margin-bottom: 30px;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
 }
@@ -213,7 +220,7 @@ button {
 /* Contador regresivo */
 .contador {
     display: flex;
-    gap: 30px;
+    gap: clamp(10px, 3vw, 30px);
     justify-content: center;
     flex-wrap: wrap;
     margin-bottom: 50px;
@@ -225,10 +232,11 @@ button {
     align-items: center;
     background-color: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(10px);
-    padding: 25px 35px;
+    padding: clamp(15px, 3vw, 25px) clamp(20px, 4vw, 35px);
     border-radius: 15px;
     border: 2px solid rgba(255, 255, 255, 0.4);
     transition: transform 0.3s ease;
+    min-width: 70px;
 }
 
 .tiempo-box:hover {
@@ -236,22 +244,22 @@ button {
 }
 
 .numero {
-    font-size: 3.5rem;
+    font-size: clamp(2rem, 6vw, 3.5rem);
     font-weight: bold;
     margin-bottom: 10px;
 }
 
 .etiqueta {
-    font-size: 1.1rem;
+    font-size: clamp(0.8rem, 2vw, 1.1rem);
     text-transform: uppercase;
     letter-spacing: 2px;
 }
 
 /* Texto "El Gran Día" */
 .gran-dia {
-    font-size: 2.2rem;
+    font-size: clamp(1.4rem, 3.5vw, 2.2rem);
     font-weight: 300;
-    letter-spacing: 4px;
+    letter-spacing: clamp(2px, 1vw, 4px);
     margin-bottom: 40px;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
 }
@@ -266,16 +274,17 @@ button {
 .calendario {
     background-color: rgba(255, 255, 255, 0.4);
     backdrop-filter: blur(15px);
-    padding: 35px;
+    padding: clamp(20px, 4vw, 35px);
     border-radius: 20px;
     box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
     border: 3px solid rgba(212, 175, 55, 0.6);
     max-width: 450px;
+    width: 100%;
 }
 
 .mes-año {
     color: rgba(51, 51, 51, 0.9);
-    font-size: 1.6rem;
+    font-size: clamp(1.2rem, 3vw, 1.6rem);
     font-weight: bold;
     text-align: center;
     margin-bottom: 20px;
@@ -286,7 +295,7 @@ button {
 .dias-semana {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    gap: 10px;
+    gap: clamp(5px, 1.5vw, 10px);
     margin-bottom: 15px;
     text-align: center;
 }
@@ -294,20 +303,20 @@ button {
 .dias-semana span {
     color: rgba(102, 102, 102, 0.9);
     font-weight: bold;
-    font-size: 1rem;
+    font-size: clamp(0.8rem, 2vw, 1rem);
 }
 
 .dias-mes {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    gap: 10px;
+    gap: clamp(5px, 1.5vw, 10px);
     text-align: center;
 }
 
 .dias-mes span {
     color: rgba(51, 51, 51, 0.9);
-    padding: 12px;
-    font-size: 1.1rem;
+    padding: clamp(8px, 2vw, 12px);
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
     font-weight: 500;
 }
 
@@ -321,7 +330,7 @@ button {
     border-radius: 50%;
     font-weight: bold;
     color: #d4af37;
-    font-size: 1.5rem;
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
     box-shadow: 0 8px 25px rgba(212, 175, 55, 0.6);
     animation: pulseGold 2.5s infinite;
 }
@@ -344,7 +353,7 @@ button {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    padding: 100px 20px;
+    padding: 80px 20px;
     min-height: 100vh;
     opacity: 0;
     animation: fadeInSection 1.5s ease-out 0.3s forwards;
@@ -361,7 +370,7 @@ button {
 
 .apartado {
     max-width: 850px;
-    margin: 0 auto 100px auto;
+    margin: 0 auto 80px auto;
     opacity: 0;
     transform: translateY(60px);
     transition: opacity 1s ease, transform 1s ease;
@@ -375,44 +384,44 @@ button {
 .caja-contenido {
     background: rgba(230, 239, 228, 0.90);
     backdrop-filter: blur(5px);
-    padding: 55px 45px;
+    padding: clamp(30px, 5vw, 55px) clamp(25px, 4vw, 45px);
     border-radius: 24px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
     border: 2px solid rgba(255, 255, 255, 0.5);
 }
 
 .titulo-apartado {
-    font-size: 3.6rem;
+    font-size: clamp(2rem, 5vw, 3.6rem);
     color: #5F7A63;
-    margin-bottom: 35px;
+    margin-bottom: clamp(20px, 4vw, 35px);
     text-align: center;
     letter-spacing: 3px;
     font-weight: 300;
 }
 
 .icono-lugar {
-    font-size: 3.5rem;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
     text-align: center;
     margin-bottom: 20px;
 }
 
 .caja-contenido h3 {
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 3vw, 2rem);
     color: #5F7A63;
     margin-bottom: 20px;
     text-align: center;
 }
 
 .caja-contenido p {
-    font-size: 1.75rem;
+    font-size: clamp(1.2rem, 2.5vw, 1.75rem);
     color: #4F6B57;
-    line-height: 1.9;
+    line-height: 1.8;
     text-align: center;
     margin-bottom: 20px;
 }
 
 .direccion {
-    font-size: 1.4rem;
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
     margin-bottom: 30px;
 }
 
@@ -420,10 +429,10 @@ button {
     display: inline-block;
     background: linear-gradient(135deg, #d4af37 0%, #c9a961 100%);
     color: white;
-    padding: 18px 45px;
+    padding: clamp(12px, 2.5vw, 18px) clamp(30px, 5vw, 45px);
     text-decoration: none;
     border-radius: 50px;
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 2vw, 1.2rem);
     font-weight: bold;
     letter-spacing: 1px;
     transition: all 0.4s ease;
@@ -446,20 +455,24 @@ button {
     align-items: center;
     gap: 30px;
     margin-bottom: 35px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .vestimenta-label {
-    font-size: 2rem;
+    font-size: clamp(1.3rem, 3vw, 2rem);
     color: #8b6f47;
     font-weight: 400;
     letter-spacing: 2px;
-    min-width: 100px;
+    min-width: 80px;
+    text-align: center;
 }
 
 .imagen-vestimenta {
     width: 100%;
     max-width: 350px;
-    height: 250px;
+    height: auto;
+    min-height: 200px;
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
@@ -487,25 +500,29 @@ button {
     margin-top: 50px;
     padding-top: 40px;
     border-top: 2px solid rgba(212, 175, 55, 0.3);
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .colores-label {
-    font-size: 1.8rem;
+    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
     color: #8b6f47;
     font-weight: 400;
     letter-spacing: 2px;
-    min-width: 100px;
+    min-width: 80px;
+    text-align: center;
 }
 
 .paleta-colores {
     display: flex;
-    gap: 20px;
+    gap: clamp(12px, 2vw, 20px);
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .color-circulo {
-    width: 60px;
-    height: 60px;
+    width: clamp(45px, 8vw, 60px);
+    height: clamp(45px, 8vw, 60px);
     border-radius: 50%;
     border: 3px solid white;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -520,13 +537,13 @@ button {
 
 /* ===== APARTADO 3: HORARIOS ===== */
 .icono-horario {
-    font-size: 4rem;
+    font-size: clamp(2.5rem, 6vw, 4rem);
     text-align: center;
     margin-bottom: 25px;
 }
 
 .horario-principal {
-    font-size: 3rem;
+    font-size: clamp(2rem, 5vw, 3rem);
     color: #5F7A63;
     font-weight: bold;
     text-align: center;
@@ -535,7 +552,7 @@ button {
 }
 
 .puntualidad {
-    font-size: 2rem;
+    font-size: clamp(1.3rem, 3vw, 2rem);
     color: #8b6f47;
     font-weight: 500;
     text-align: center;
@@ -545,14 +562,14 @@ button {
 /* ===== BOTÓN DE CONTROL DE MÚSICA ===== */
 .boton-musica {
     position: fixed;
-    bottom: 40px;
-    right: 40px;
-    width: 80px;
-    height: 80px;
+    bottom: 30px;
+    right: 30px;
+    width: clamp(55px, 10vw, 80px);
+    height: clamp(55px, 10vw, 80px);
     border-radius: 50%;
     background: linear-gradient(135deg, #d4af37 0%, #c9a961 100%);
     border: 4px solid white;
-    font-size: 2.5rem;
+    font-size: clamp(1.6rem, 4vw, 2.5rem);
     cursor: pointer;
     z-index: 9999;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
@@ -578,210 +595,48 @@ button {
     background: linear-gradient(135deg, #888 0%, #666 100%);
 }
 
-/* ===== RESPONSIVE ===== */
+/* ===== RESPONSIVE ADICIONAL ===== */
 @media (max-width: 768px) {
     .seccion-portada-novios {
         padding-top: 30px;
     }
     
-    .nombres-novios-cursiva {
-        font-size: 2.5rem;
-        letter-spacing: 2px;
-    }
-
-    .seccion-frase-novios {
-        min-height: 50vh;
-        padding: 60px 20px;
-    }
-    
-    .caja-frase {
-        padding: 40px 30px;
-    }
-    
-    .icono-corazon {
-        font-size: 3rem;
-        margin-bottom: 20px;
-    }
-    
-    .texto-frase {
-        font-size: 1.4rem;
-    }
-    
-    .faltan-texto {
-        font-size: 1.6rem;
-    }
-    
-    .contador {
-        gap: 15px;
-    }
-    
-    .tiempo-box {
-        padding: 18px 25px;
-    }
-    
-    .numero {
-        font-size: 2.5rem;
-    }
-    
-    .etiqueta {
-        font-size: 1rem;
-    }
-    
-    .gran-dia {
-        font-size: 1.6rem;
-    }
-
-    .calendario {
-        padding: 25px;
-    }
-
-    .mes-año {
-        font-size: 1.3rem;
-    }
-
-    .dias-mes span {
-        padding: 10px;
-        font-size: 1rem;
-    }
-
-    .caja-contenido {
-        padding: 35px 25px;
-    }
-
-    .titulo-apartado {
-        font-size: 2.2rem;
-    }
-
-    .vestimenta-fila,
-    .colores-fila {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
-    }
-    
-    .vestimenta-label,
-    .colores-label {
-        font-size: 1.5rem;
-        min-width: auto;
-    }
-    
-    .imagen-vestimenta {
-        max-width: 100%;
-        height: 220px;
-    }
-    
-    .color-circulo {
-        width: 50px;
-        height: 50px;
-    }
-
-    .horario-principal {
-        font-size: 2.2rem;
-    }
-    
-    .puntualidad {
-        font-size: 1.5rem;
-    }
-
-    .boton-musica {
-        bottom: 25px;
-        right: 25px;
-        width: 65px;
-        height: 65px;
-        font-size: 2rem;
-    }
-}
-
-/* ===== SMOOTH SCROLL ===== */
-html {
-    scroll-behavior: smooth;
-    margin: 0 !important;
-    padding: 0 !important;
-}
-
-/* ===== RESET Y CONFIGURACIÓN GENERAL ===== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html, body {
-    margin: 0 !important;
-    padding: 0 !important;
-    width: 100%;
-    height: 100%;
-}
-
-body {
-    font-family: 'Georgia', serif;
-    color: #333;
-    overflow-x: hidden;
-    background-image: url('images/boda2.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-color: #f5e6d3;
-}
-
-/* ... TODO TU CSS ORIGINAL SIN CAMBIOS ... */
-
-/* ===== RESPONSIVE ORIGINAL ===== */
-@media (max-width: 768px) {
-    /* tu bloque existente intacto */
-}
-
-/* ===== AJUSTE FINO SOLO PARA TELÉFONOS PEQUEÑOS ===== */
-@media (max-width: 480px) {
-
-    html {
-        font-size: 14px;
-    }
-
-    body {
-        background-attachment: scroll;
-    }
-
     .seccion-frase-novios,
     .seccion-calendario,
     .seccion-apartados {
         background-attachment: scroll;
     }
-
-    .nombres-novios-cursiva {
-        font-size: 2rem;
-        letter-spacing: 1px;
+    
+    body {
+        background-attachment: scroll;
     }
-
-    .texto-frase {
-        font-size: 1.2rem;
-        line-height: 1.6;
+    
+    .vestimenta-fila,
+    .colores-fila {
+        flex-direction: column;
+        align-items: center;
     }
-
-    .titulo-apartado {
-        font-size: 1.9rem;
+    
+    .imagen-vestimenta {
+        max-width: 100%;
     }
+}
 
-    .caja-contenido p {
-        font-size: 1.4rem;
-        line-height: 1.7;
+@media (max-width: 480px) {
+    html {
+        font-size: 14px;
     }
-
-    .horario-principal {
-        font-size: 1.9rem;
-    }
-
-    .puntualidad {
-        font-size: 1.3rem;
-    }
-
+    
     .boton-musica {
-        width: 55px;
-        height: 55px;
-        font-size: 1.6rem;
+        bottom: 20px;
+        right: 20px;
     }
-
-    .dias-mes span.dia-boda {
-        font-size: 1.2rem;
+    
+    .contador {
+        gap: 8px;
+    }
+    
+    .tiempo-box {
+        min-width: 60px;
     }
 }
